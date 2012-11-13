@@ -345,6 +345,11 @@ module Berkshelf
       @cached_cookbooks = resolver.resolve
       write_lockfile(resolver.sources) unless lockfile_present?
 
+      if options[:shims]
+        Berkshelf.formatter.deprecation "--path has replaced --shims"
+        options[:path] ||= options[:shims]
+      end
+
       if options[:path]
         self.class.vendor(@cached_cookbooks, options[:path])
       end
