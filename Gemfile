@@ -35,4 +35,15 @@ end
 
 group :test do
   gem 'fuubar'
+  gem 'json_spec'
+  gem 'rake', '>= 0.9.2.2'
+  gem 'rspec'
+  gem 'thor'
+  gem 'vcr'
+  gem 'webmock'
+  gem 'moneta', '~> 0.6.0'
+end
+
+group :development, :test do
+  gem 'vagrant', '~> 1.0.6'
 end
